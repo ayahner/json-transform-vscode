@@ -31,6 +31,16 @@ locations[?state == 'WA'].name | sort(@) | {WashingtonCities: join(', ', @)}
 }
 ```
 
+## Known Issues
+
+None.
+
+## Release Notes
+
+### 1.0.0
+
+Initial release of JSONTransform
+
 ## License
 
 MIT License
