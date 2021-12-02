@@ -6,3 +6,4 @@ out
 
 build/
 dist/
+.vscode-test/

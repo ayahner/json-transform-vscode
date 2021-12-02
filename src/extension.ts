@@ -4,8 +4,6 @@ import * as vscode from 'vscode';
 
 import * as panel from './OutputPanel';
 
-console.log('json-transform-vscode: extension "json-transform-vscode" is instantiatedˇ');
-
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
