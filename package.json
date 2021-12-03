@@ -2,8 +2,13 @@
   "name": "json-transform-vscode",
   "displayName": "Transform JMESPath",
   "description": "Interactively transform JSON in VSCode.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "Thoroughcity",
+  "galleryBanner": {
+    "color": "#e0dce0",
+    "theme":"dark"
+  },
+  "icon": "images/JMESPath Logo v1 128x128.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/ayahner/json-transform-vscode"
