@@ -3,7 +3,11 @@
   "displayName": "Transform JMESPath",
   "description": "Interactively transform JSON in VSCode.",
   "version": "1.0.0",
-  "publisher": "Thoroughcity, LLC",
+  "publisher": "Thoroughcity",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ayahner/json-transform-vscode"
+  },
   "engines": {
     "vscode": "^1.62.0"
   },
