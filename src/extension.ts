@@ -1,23 +1,29 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
-import * as transformEditor from './JsonTransformEditor';
 
-// this method is called when your extension is activated
-// your extension is activated the very first time the command is executed
+import JsonCommandService from "./services/jsonCommandService";
+import OutputChannelResultViewer from "./ui/outputChannelResultViewer";
+import { ErrorUtils } from "./utils/errorUtils";
+import { Constants } from "./utils/constants";
+
 export function activate(context: vscode.ExtensionContext) {
     console.log('json-transform-vscode: activated');
 
-	// The command has been defined in the package.json file
-	let disposable = vscode.commands.registerCommand('json-transform-vscode.transform', () => {
-		transformEditor.transform();
-	});
+	const outputChannel = new OutputChannelResultViewer(Constants.OUTPUT_CHANNEL);
+	const jsonCommandService = new JsonCommandService(context, outputChannel);
 
-	context.subscriptions.push(disposable);
+	// The command has been defined in the package.json file
+	context.subscriptions.push(vscode.commands.registerTextEditorCommand('json-transform-vscode.execute', () => {
+		try {
+			jsonCommandService.execute();
+		} catch (e) {
+			vscode.window.showErrorMessage(`${ErrorUtils.getErrorMessage(e)}`);
+		}
+		})
+	);
+	context.subscriptions.push(outputChannel);
+	context.subscriptions.push(jsonCommandService);
 }
 
-// this method is called when your extension is deactivated
 export function deactivate() {
-
 	console.log('json-transform-vscode: deactivated');
 }
