@@ -1,7 +1,7 @@
 # json-transform-vscode
 Transform JSON in Visual Studio Code
 
-Use [JMESPath ](https://jmespath.org) to evaluate an expression against selected JSON to transform it into a separate editor pane.
+Use [JMESPath ](https://jmespath.org) to evaluate an expression against selected JSON to transform it into an output channel.
 
 To learn more about JMESPath, check out the [JMESPath Tutorial](http://jmespath.org/tutorial.html) and [JMESPath Examples](https://jmespath.org/examples.html).
 
