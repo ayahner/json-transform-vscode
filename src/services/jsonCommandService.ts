@@ -11,7 +11,7 @@ import JMESPathService from './jmespathService';
 export default class JsonCommandService {
   public static COMMAND_NAME = 'jmespath.query';
 
-  private extensionContext: vscode.ExtensionContext;
+  private lastExpression: string | undefined;
   private expressionInput: ExpressionInput;
   private jsonService: JMESPathService;
   private resultViewer: ResultViewer;
@@ -19,7 +19,6 @@ export default class JsonCommandService {
   private disposable: vscode.Disposable;
 
   constructor(context: vscode.ExtensionContext, resultViewer?: ResultViewer) {
-    this.extensionContext = context;
     this.expressionInput = new ExpressionInput(context);
     this.jsonService = new JMESPathService(context);
     this.resultViewer =
@@ -47,7 +46,8 @@ export default class JsonCommandService {
     try {
       const expression = await this.expressionInput.presentInputBox(
         Constants.INPUT_PROMPT,
-        Constants.INPUT_EXPRESSION
+        Constants.INPUT_EXPRESSION,
+        this.lastExpression
       );
       if (expression === undefined) {
         return Promise.resolve();
@@ -69,6 +69,9 @@ export default class JsonCommandService {
     const data = vscode.window.activeTextEditor?.document.getText();
     if (data) {
       const result = this.jsonService.search(data, expression);
+      if (result) {
+        this.lastExpression = expression;
+      }
       this.resultViewer.viewResult(result);
     }
   }

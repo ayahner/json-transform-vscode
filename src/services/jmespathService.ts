@@ -16,6 +16,7 @@ export default class JMESPathService {
 		}
 
 		const jsonData = JSON.parse(data);
+		
 		const searchResult = jmespath.search(jsonData, expression);
 		return searchResult;
 	}

@@ -19,9 +19,11 @@ export default class ExpressionInput {
 	 * @param placeholder An optional string to show as place holder in the input box to guide the user what to type.
 	 * @return A Promise<string> representing the user-entered expression
 	 */
-	public async presentInputBox(prompt: string, placeholder?: string): Promise<string | undefined> {
+	public async presentInputBox(prompt: string, placeholder?: string, value?: string): Promise<string | undefined> {
 		return vscode.window.showInputBox({
 			prompt: prompt,
+			valueSelection: [-1,-1],
+			value: value,
 			placeHolder: placeholder,
 		validateInput: (expression) => {
 				return this.validateExpression(expression);

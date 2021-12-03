@@ -1,5 +1,5 @@
 export abstract class Constants {
-	public static readonly INPUT_PROMPT = "Enter expression";
+	public static readonly INPUT_PROMPT = "Enter JMESPath expression";
     public static readonly INPUT_EXPRESSION = "JMESPath expression";
 	
     public static readonly OUTPUT_CHANNEL = "JSON Output";
