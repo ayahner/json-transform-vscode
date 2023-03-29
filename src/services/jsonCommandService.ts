@@ -39,8 +39,8 @@ export default class JsonCommandService {
   }
 
   public async execute() {
-    if (vscode.window.activeTextEditor?.document.languageId !== 'json') {
-      throw new Error(Constants.ERROR_UNSUPPORTED_DOCUMENT);
+    if (vscode.window.activeTextEditor?.document.languageId !== 'json' && vscode.window.activeTextEditor?.document.languageId !== 'jsonc') {
+      this.resultViewer.viewResult("Language Type '"+vscode.window.activeTextEditor?.document.languageId+"' not supported. "+Constants.ERROR_UNSUPPORTED_DOCUMENT);
     }
 
     try {

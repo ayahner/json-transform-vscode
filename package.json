@@ -45,8 +45,8 @@
       {
         "command": "json-transform-vscode.execute",
         "key": "ctrl+shift+t",
-        "mac": "ctrl+shift+t",
-        "when": "resourceExtname == .json"
+        "mac": "command+shift+t",
+        "when": "editorLangId == json || editorLangId == jsonc"
       }
     ]
   },
