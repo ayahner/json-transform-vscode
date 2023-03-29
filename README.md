@@ -46,6 +46,9 @@ Changed .json extension required to json/jsonc language type required (works in 
 Updated the output window name to JMESPath Output
 Added error on incoorect language type to the console
 
+### 1.0.6
+Now persisting the last expression in globalStore
+
 Initial release of JSONTransform
 
 ## License
