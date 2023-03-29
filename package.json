@@ -2,7 +2,7 @@
   "name": "json-transform-vscode",
   "displayName": "Transform with JMESPath",
   "description": "Interactively transform JSON in VSCode using JMESPath.",
-  "version": "1.0.3",
+  "version": "1.0.6",
   "publisher": "Thoroughcity",
   "galleryBanner": {
     "color": "#e0dce0",
@@ -45,8 +45,8 @@
       {
         "command": "json-transform-vscode.execute",
         "key": "ctrl+shift+t",
-        "mac": "ctrl+shift+t",
-        "when": "resourceExtname == .json"
+        "mac": "shift+cmd+t",
+        "when": "editorLangId == json || editorLangId == jsonc"
       }
     ]
   },

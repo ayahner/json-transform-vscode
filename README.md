@@ -41,6 +41,13 @@ None.
 
 Initial release of JSONTransform
 
+### 1.0.5
+Changed .json extension required to json/jsonc language type required (works in unsafed file now)
+Updated the output window name to JMESPath Output
+Added error on incoorect language type to the console
+
+Initial release of JSONTransform
+
 ## License
 
 MIT License
