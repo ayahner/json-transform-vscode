@@ -1,13 +1,32 @@
 {
   "name": "json-transform-vscode",
-  "displayName": "JSONTransform",
-  "description": "Interactively transform JSON in VSCode.",
-  "version": "1.0.0",
+  "displayName": "Transform with JMESPath",
+  "description": "Interactively transform JSON in VSCode using JMESPath.",
+  "version": "1.0.3",
+  "publisher": "Thoroughcity",
+  "galleryBanner": {
+    "color": "#e0dce0",
+    "theme": "light"
+  },
+  "icon": "images/Logo256x256.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ayahner/json-transform-vscode"
+  },
   "engines": {
     "vscode": "^1.62.0"
   },
   "categories": [
+    "Programming Languages",
+    "Formatters",
     "Other"
+  ],
+  "license": "SEE LICENSE IN LICENSE",
+  "keywords": [
+    "JSON",
+    "schema",
+    "javascript",
+    "transform"
   ],
   "activationEvents": [
     "onLanguage:json",
@@ -17,15 +36,17 @@
   "contributes": {
     "commands": [
       {
-        "command": "json-transform-vscode.transform",
-        "title": "JSONTransform: Transform"
+        "command": "json-transform-vscode.execute",
+        "title": "Transform with JMESPath",
+        "category": "JSON"
       }
     ],
     "keybindings": [
       {
-        "command": "json-transform-vscode.jsonTransform",
+        "command": "json-transform-vscode.execute",
         "key": "ctrl+shift+t",
-        "mac": "ctrl+shift+t"
+        "mac": "ctrl+shift+t",
+        "when": "resourceExtname == .json"
       }
     ]
   },
@@ -42,12 +63,14 @@
     "@types/mocha": "^9.0.0",
     "@types/node": "14.x",
     "@types/vscode": "^1.62.0",
-    "@typescript-eslint/eslint-plugin": "^5.1.0",
-    "@typescript-eslint/parser": "^5.1.0",
     "@vscode/test-electron": "^1.6.2",
     "eslint": "^8.1.0",
     "glob": "^7.1.7",
     "mocha": "^9.1.3",
     "typescript": "^4.4.4"
+  },
+  "dependencies": {
+    "@types/jmespath": "^0.15.0",
+    "jmespath": "^0.15.0"
   }
 }
