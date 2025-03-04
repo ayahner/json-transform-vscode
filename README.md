@@ -1,5 +1,5 @@
 # json-transform-vscode
-Transform JSON in Visual Studio Code
+Transform JSON on the fly within Visual Studio Code using JMESPath
 
 Use [JMESPath ](https://jmespath.org) to evaluate an expression against selected JSON to transform it into an output channel.
 
