@@ -1,4 +1,5 @@
 # json-transform-vscode
+
 Transform JSON in Visual Studio Code
 
 Use [JMESPath ](https://jmespath.org) to evaluate an expression against selected JSON to transform it into an output channel.
@@ -8,11 +9,13 @@ To learn more about JMESPath, check out the [JMESPath Tutorial](http://jmespath.
 ## Example
 
 ### Expression:
+
 ```
 locations[?state == 'WA'].name | sort(@) | {WashingtonCities: join(', ', @)}
 ```
 
 ### Sample JSON:
+
 ```
 {
   "locations": [
@@ -25,6 +28,7 @@ locations[?state == 'WA'].name | sort(@) | {WashingtonCities: join(', ', @)}
 ```
 
 ### Result:
+
 ```
 {
   "WashingtonCities": "Bellevue, Olympia, Seattle"
@@ -42,12 +46,18 @@ None.
 Initial release of JSONTransform
 
 ### 1.0.5
+
 Changed .json extension required to json/jsonc language type required (works in unsafed file now)
 Updated the output window name to JMESPath Output
 Added error on incoorect language type to the console
 
 ### 1.0.6
+
 Now persisting the last expression in globalStore
+
+### 1.0.7
+
+No longer auto opens the output tab in workspace panel
 
 ## License
 
